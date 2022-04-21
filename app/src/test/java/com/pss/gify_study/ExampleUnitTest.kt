@@ -1,4 +1,4 @@
-package com.pss.quick_setup
+package com.pss.gify_study
 
 import org.junit.Test
 
