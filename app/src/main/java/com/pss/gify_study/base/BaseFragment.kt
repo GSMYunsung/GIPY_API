@@ -1,4 +1,4 @@
-package com.pss.quick_setup.base
+package com.pss.gify_study.base
 
 import android.os.Bundle
 import android.view.LayoutInflater
