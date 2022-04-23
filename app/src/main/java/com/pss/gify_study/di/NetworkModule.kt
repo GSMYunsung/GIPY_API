@@ -1,6 +1,7 @@
-package com.pss.quick_setup.di
+package com.pss.gify_study.di
 
-import com.pss.quick_setup.widget.utils.Utils.BASE_URL
+import com.pss.gify_study.data.remote.api.GiphyApi
+import com.pss.gify_study.widget.utils.Utils.BASE_URL
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -52,9 +53,9 @@ object NetworkModule {
     private fun getLoggingInterceptor(): HttpLoggingInterceptor =
         HttpLoggingInterceptor().apply { level = HttpLoggingInterceptor.Level.BODY }
 
-/*    @Provides
+    @Provides
     @Singleton
-    fun provideSampleApiService(retrofit: Retrofit): SampleApi {
-        return retrofit.create(SampleApi::class.java)
-    }*/
+    fun provideSampleApiService(retrofit: Retrofit): GiphyApi {
+        return retrofit.create(GiphyApi::class.java)
+    }
 }
