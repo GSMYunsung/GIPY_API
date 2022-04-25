@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.CircularProgressDrawable
@@ -14,34 +15,16 @@ import com.cys.gify_study.databinding.ItemTrendGiphyBinding
 import com.pss.gify_study.data.remote.model.Data
 import com.pss.gify_study.widget.utils.DataDiffUtil
 
-class GiphyAdapter(giphyList : List<Data>) : RecyclerView.Adapter<PagerViewHolder>() {
-
-    var giphyList = giphyList
+class GiphyAdapter(diffCallback: DiffUtil.ItemCallback<Data>) : PagingDataAdapter<Data,PagerViewHolder>(diffCallback) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PagerViewHolder = PagerViewHolder.from(parent)
 
     override fun onBindViewHolder(holder: PagerViewHolder, position: Int) {
-        holder.bind(giphyList[position])
-    }
-
-    override fun getItemCount(): Int {
-        return giphyList.size
-    }
-
-    fun setData(newMemberList: List<Data>) {
-
-        val giphyDiffUtil = DataDiffUtil(giphyList, newMemberList)
-
-        val diffUtilResult = DiffUtil.calculateDiff(giphyDiffUtil)
-
-        giphyList = newMemberList
-
-        diffUtilResult.dispatchUpdatesTo(this)
-
-
+        holder.bind(getItem(position))
     }
 
 }
+
 
 class PagerViewHolder(private val binding: ItemTrendGiphyBinding) : RecyclerView.ViewHolder(binding.root)
 {

@@ -16,3 +16,10 @@ class DataDiffUtil (
     override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean =  oldList[oldItemPosition] == newList[newItemPosition]
 
 }
+
+object DataComparator : DiffUtil.ItemCallback<Data>(){
+    override fun areItemsTheSame(oldItem: Data, newItem: Data): Boolean = oldItem.url == newItem.url
+
+    override fun areContentsTheSame(oldItem: Data, newItem: Data): Boolean  = oldItem == newItem
+
+}
