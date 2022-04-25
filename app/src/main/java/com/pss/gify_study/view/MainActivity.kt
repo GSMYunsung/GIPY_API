@@ -18,7 +18,6 @@ import com.cys.gify_study.R
 import com.cys.gify_study.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.pss.gify_study.base.BaseActivity
-import com.pss.gify_study.data.remote.model.GiphyRequest
 import com.pss.gify_study.viewmodel.MainViewModel
 import com.pss.gify_study.widget.utils.Utils.GIPHY_API_KEY
 import dagger.hilt.android.AndroidEntryPoint
