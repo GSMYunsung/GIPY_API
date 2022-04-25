@@ -82,6 +82,9 @@ dependencies {
     implementation 'com.squareup.okhttp3:okhttp:4.9.1'
     implementation 'com.squareup.okhttp3:logging-interceptor:4.9.1'
 
+    def paging_version = "3.0.0"
+    implementation "androidx.paging:paging-runtime-ktx:$paging_version"
+
     //coroutines
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2'
 
